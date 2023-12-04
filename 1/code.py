@@ -24,6 +24,9 @@ with open('input.txt', 'r') as f:
 for i, line in enumerate(lines):
     logging.debug(f"Line {i}: {line}")
     # find all single digits numbers and digit spelled with letters in the line
+    # PART 1
+    # found_digits = re.findall(r'(?=(\d))', line.rstrip())
+    # PART 2
     found_digits = re.findall(r'(?=(one|two|three|four|five|six|seven|eight|nine|\d))', line.rstrip())
     # convert all found digits to int
     found_digits = [digit_map[digit] if digit in digit_map else digit for digit in found_digits]
